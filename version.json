@@ -1,6 +1,6 @@
 {
   "latestVersion": "1.1.1",
-  "releaseDate": "2026-06-28",
-  "message": "テスト",
+  "releaseDate": "2026-06-29",
+  "message": "・Capsuleに設定していたコンタクトのプレビューが正しく表記されない問題を修正しました。\n・詳細設定のレイアウトを一部変更しました。",
   "downloadUrl": "https://booth.pm/ja/items/8519920"
 }
