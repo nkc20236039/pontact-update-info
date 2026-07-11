@@ -1,0 +1,33 @@
+{
+  "source": "D:\\.Original\\Develop\\VRChat\\Pontact\\docs",
+  "target_extensions": [
+    ".gif",
+    ".jpeg",
+    ".jpg",
+    ".md",
+    ".mp4",
+    ".png"
+  ],
+  "pages": [
+    {
+      "title": "かんたんセットアップ",
+      "source": "01_かんたんセットアップ.md",
+      "output": "かんたんセットアップ.html"
+    },
+    {
+      "title": "タブの設定項目",
+      "source": "02_タブの設定項目.md",
+      "output": "タブの設定項目.html"
+    },
+    {
+      "title": "詳細設定",
+      "source": "03_詳細設定.md",
+      "output": "詳細設定.html"
+    },
+    {
+      "title": "演出設定",
+      "source": "04_演出設定.md",
+      "output": "演出設定.html"
+    }
+  ]
+}
