@@ -16,16 +16,19 @@
   --accent: #0065b3;
   --accent-hover: #004b86;
   --accent-soft: #e8f3ff;
-  --active-indicator: #5c2d91;
   --code-bg: #f6f6f6;
+  --nav-width: clamp(260px, 24vw, 320px);
+  --nav-slide-duration: 220ms;
+  --content-slide-duration: 260ms;
 }
-
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
   font-family: "Segoe UI", "Meiryo", "Yu Gothic UI", system-ui, sans-serif;
   font-size: 16px;
   color: var(--text);
@@ -46,6 +49,59 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
+.nav-toggle {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  margin: 0 10px 0 -8px;
+  padding: 0;
+  color: var(--header-text);
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  color: var(--accent-hover);
+  background: var(--accent-soft);
+  outline: none;
+}
+
+.nav-toggle:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.nav-toggle-icon,
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  position: absolute;
+  left: 8px;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+}
+
+.nav-toggle-icon {
+  top: 17px;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  left: 0;
+  content: "";
+}
+
+.nav-toggle-icon::before {
+  top: -6px;
+}
+
+.nav-toggle-icon::after {
+  top: 6px;
+}
+
 .brand {
   color: inherit;
   font-size: 0.95rem;
@@ -55,18 +111,37 @@ body {
 
 .site-shell {
   display: grid;
-  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+  grid-template-columns: var(--nav-width) minmax(0, 1fr);
   min-height: calc(100vh - 54px);
+  transition: grid-template-columns var(--content-slide-duration) ease-out;
+}
+
+body.nav-collapsed .site-shell {
+  grid-template-columns: 0px minmax(0, 1fr);
+}
+
+body.nav-collapsed .side-nav {
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+body.nav-no-transition .site-shell,
+body.nav-no-transition .side-nav {
+  transition: none;
 }
 
 .side-nav {
   position: sticky;
   top: 54px;
+  width: var(--nav-width);
   height: calc(100vh - 54px);
   overflow: auto;
   padding: 18px 16px 32px 24px;
   background: var(--panel-bg);
   border-right: 1px solid var(--border);
+  transform: translateX(0);
+  transition: transform var(--nav-slide-duration) ease-out;
+  will-change: transform;
 }
 
 .nav-tree,
@@ -95,27 +170,41 @@ body {
   cursor: pointer;
 }
 
+.nav-link {
+  border-left: 3px solid transparent;
+}
+
 .nav-link:hover,
-.nav-folder summary:hover {
+.nav-link:focus,
+.nav-link:focus-visible,
+.nav-folder summary:hover,
+.nav-folder summary:focus,
+.nav-folder summary:focus-visible {
   color: var(--accent-hover);
-  background: #eeeeee;
+  background: var(--accent-soft);
+  text-decoration: none;
+  outline: none;
+}
+
+.nav-link:focus-visible,
+.nav-folder summary:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--accent);
 }
 
 .nav-link.is-active {
-  position: relative;
-  color: var(--text);
-  background: #eeeeee;
+  color: var(--accent);
+  background: transparent;
+  border-left-color: var(--accent);
   font-weight: 600;
+  text-decoration: none;
 }
 
-.nav-link.is-active::before {
-  content: "";
-  position: absolute;
-  top: 6px;
-  bottom: 6px;
-  left: 0;
-  width: 3px;
-  background: var(--active-indicator);
+.nav-link.is-active:hover,
+.nav-link.is-active:focus,
+.nav-link.is-active:focus-visible {
+  color: var(--accent-hover);
+  background: var(--accent-soft);
+  text-decoration: none;
 }
 
 .doc-content {
@@ -124,7 +213,7 @@ body {
 }
 
 .doc-article {
-  max-width: 960px;
+  max-width: 1200px;
   min-height: calc(100vh - 118px);
   padding: 0 0 64px;
   background: var(--doc-bg);
@@ -171,8 +260,14 @@ a:hover {
 }
 
 img,
-video {
+video,
+picture,
+figure {
   max-width: 100%;
+}
+
+img,
+video {
   height: auto;
 }
 
@@ -321,7 +416,7 @@ mark {
 
 @media (max-width: 820px) {
   .site-header {
-    position: static;
+    padding: 0 16px;
   }
 
   .site-shell {
@@ -329,19 +424,35 @@ mark {
   }
 
   .side-nav {
-    position: static;
-    width: 100%;
+    position: fixed;
+    top: 54px;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    width: min(320px, 86vw);
     height: auto;
-    max-height: 45vh;
-    border-right: 0;
-    border-bottom: 1px solid var(--border);
+    max-height: none;
+    border-right: 1px solid var(--border);
+    border-bottom: 0;
+    box-shadow: 6px 0 18px rgb(0 0 0 / 16%);
   }
 
   .doc-content {
-    padding: 16px;
+    width: 100%;
+    padding: 12px;
+    overflow-wrap: anywhere;
   }
 
   .doc-article {
-    padding: 28px 20px 44px;
+    width: 100%;
+    padding: 24px 12px 40px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
   }
 }
