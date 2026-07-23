@@ -1,6 +1,6 @@
 {
-  "latestVersion": "1.3.0",
-  "releaseDate": "2026-07-11",
-  "message": "・[重要] 登録時にModular Avatarが見つかったら解決方法を選択するように更新\n・パーティクルのサイズ調整ができる機能を追加",
-  "downloadUrl": "https://booth.pm/ja/items/8519920"
+    "latestVersion": "1.4.0",
+    "releaseDate": "2026-07-23",
+    "message": "・Modular Avatarの対応を強化(PhysBoneに対応)\n・ぽんタクトのExメニューにアイコンを追加\n・Exメニューの構造を整理\n・一部バグ修正",
+    "downloadUrl": "https://booth.pm/ja/items/8519920"
 }
