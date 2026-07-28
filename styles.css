@@ -170,6 +170,33 @@ body.nav-no-transition .side-nav {
   cursor: pointer;
 }
 
+.nav-folder > details > summary {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  list-style: none;
+  font-weight: 600;
+}
+
+.nav-folder > details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-folder > details > summary::before {
+  flex: 0 0 auto;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  content: "";
+  transform: rotate(-45deg);
+  transition: transform 120ms ease-out;
+}
+
+.nav-folder > details[open] > summary::before {
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
 .nav-link {
   border-left: 3px solid transparent;
 }

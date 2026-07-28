@@ -23,13 +23,14 @@
   <div class="site-shell">
     <aside class="side-nav" id="side-nav" aria-label="ドキュメントメニュー">
       <ul class="nav-tree"><li><a class="nav-link is-active" href="#/" data-route="" aria-current="page">ぽんタクトとは</a></li>
-<li><a class="nav-link" href="#/%E3%81%8B%E3%82%93%E3%81%9F%E3%82%93%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97" data-route="%E3%81%8B%E3%82%93%E3%81%9F%E3%82%93%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97">かんたんセットアップ</a></li>
-<li><a class="nav-link" href="#/%E8%AA%A4%E6%93%8D%E4%BD%9C%E3%81%AE%E9%98%B2%E6%AD%A2" data-route="%E8%AA%A4%E6%93%8D%E4%BD%9C%E3%81%AE%E9%98%B2%E6%AD%A2">誤操作の防止</a></li>
-<li><a class="nav-link" href="#/Ex%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E3%81%8B%E3%82%89%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88%E3%82%8B" data-route="Ex%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E3%81%8B%E3%82%89%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88%E3%82%8B">Exメニューから切り替える</a></li>
-<li class="nav-folder"><details open><summary>各項目の内容</summary><ul><li><a class="nav-link" href="#/%E5%90%84%E9%A0%85%E7%9B%AE%E3%81%AE%E5%86%85%E5%AE%B9/%E3%82%BF%E3%83%96%E3%81%AE%E8%A8%AD%E5%AE%9A%E9%A0%85%E7%9B%AE" data-route="%E5%90%84%E9%A0%85%E7%9B%AE%E3%81%AE%E5%86%85%E5%AE%B9/%E3%82%BF%E3%83%96%E3%81%AE%E8%A8%AD%E5%AE%9A%E9%A0%85%E7%9B%AE">タブの設定項目</a></li>
-<li><a class="nav-link" href="#/%E5%90%84%E9%A0%85%E7%9B%AE%E3%81%AE%E5%86%85%E5%AE%B9/%E8%A9%B3%E7%B4%B0%E8%A8%AD%E5%AE%9A" data-route="%E5%90%84%E9%A0%85%E7%9B%AE%E3%81%AE%E5%86%85%E5%AE%B9/%E8%A9%B3%E7%B4%B0%E8%A8%AD%E5%AE%9A">詳細設定</a></li>
-<li><a class="nav-link" href="#/%E5%90%84%E9%A0%85%E7%9B%AE%E3%81%AE%E5%86%85%E5%AE%B9/%E6%BC%94%E5%87%BA%E8%A8%AD%E5%AE%9A" data-route="%E5%90%84%E9%A0%85%E7%9B%AE%E3%81%AE%E5%86%85%E5%AE%B9/%E6%BC%94%E5%87%BA%E8%A8%AD%E5%AE%9A">演出設定</a></li></ul></details></li>
-<li class="nav-folder"><details open><summary>Help</summary><ul><li><a class="nav-link" href="#/Help/%E8%AD%A6%E5%91%8A%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%82%8B" data-route="Help/%E8%AD%A6%E5%91%8A%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%82%8B">警告ウィンドウが表示される</a></li></ul></details></li></ul>
+<li><a class="nav-link" href="#/setup" data-route="setup">かんたんセットアップ</a></li>
+<li><a class="nav-link" href="#/touch-lock" data-route="touch-lock">誤操作の防止</a></li>
+<li><a class="nav-link" href="#/ex_menu" data-route="ex_menu">Exメニューから切り替える</a></li>
+<li class="nav-folder"><details><summary>各項目の内容</summary><ul><li><a class="nav-link" href="#/reference/overlay" data-route="reference/overlay">タブの設定項目</a></li>
+<li><a class="nav-link" href="#/reference/advanced-settings" data-route="reference/advanced-settings">詳細設定</a></li>
+<li><a class="nav-link" href="#/reference/presentation-settings" data-route="reference/presentation-settings">演出設定</a></li></ul></details></li>
+<li class="nav-folder"><details><summary>Help</summary><ul><li><a class="nav-link" href="#/help/change-setting-window" data-route="help/change-setting-window">警告ウィンドウが表示される</a></li></ul></details></li>
+<li><a class="nav-link" href="#/change_log" data-route="change_log">更新履歴</a></li></ul>
     </aside>
     <main class="doc-content">
       <article class="doc-article" id="doc-article" aria-live="polite">
@@ -51,7 +52,8 @@
       </article>
     </main>
   </div>
-  <template data-doc-route="%E3%81%8B%E3%82%93%E3%81%9F%E3%82%93%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97" data-doc-title="かんたんセットアップ">
+  <template data-doc-route="setup" data-doc-title="かんたんセットアップ">
+<h1>かんたんセットアップ</h1>
 <p><figure><img src="assets/%E3%81%8B%E3%82%93%E3%81%9F%E3%82%93%E5%B0%8E%E5%85%A5%E6%96%B9%E6%B3%95-c4b0632d97.jpg" alt="かんたん導入方法" width="500"></figure></p>
 <hr>
 <ol>
@@ -69,7 +71,8 @@
 <p>導入が終わるとExメニューも同時に作成されます。<br>
 誤操作防止のためのロック機能があります。詳しくは<a href="obsidian://open?vault=docs&amp;file=02_%E8%AA%A4%E6%93%8D%E4%BD%9C%E3%82%92%E9%98%B2%E6%AD%A2">誤操作の防止</a>を確認してください。</p>
 </template>
-<template data-doc-route="%E8%AA%A4%E6%93%8D%E4%BD%9C%E3%81%AE%E9%98%B2%E6%AD%A2" data-doc-title="誤操作の防止">
+<template data-doc-route="touch-lock" data-doc-title="誤操作の防止">
+<h1>誤操作の防止</h1>
 <p>使用中に手がコンタクトに触れてしまう誤操作を防ぐために切り替えしないようにロックする機能があります。</p>
 <h1 id="設定方法">設定方法</h1>
 <p>Unityで改変する際には特別な設定なしで自動で作成されます。</p>
@@ -82,7 +85,7 @@ Both: 自分と他人の両方をロックします。</p>
 <p>こちらは切り替え式になっており、3つの項目のうちどれか一つが選択できます。<br>
 ロックを解除したい場合は設定中の同じボタンを押してください。</p>
 </template>
-<template data-doc-route="Ex%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E3%81%8B%E3%82%89%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88%E3%82%8B" data-doc-title="Exメニューから切り替える">
+<template data-doc-route="ex_menu" data-doc-title="Exメニューから切り替える">
 <h1>Exメニューから切り替える</h1>
 <p>コンタクトに触れる以外にもExメニューから状態を切り替えられるようになっています。<br>
 ぽんタクトの設定をすると自動でExメニューが作成され、アバターのメニューに追加されます。</p>
@@ -91,6 +94,63 @@ Both: 自分と他人の両方をロックします。</p>
 反応させたいコンタクトの名前をクリックすることでExメニューから衣装の切り替えができます。<br>
 コンタクトの名前は<a href="obsidian://open?vault=docs&amp;file=03_%E5%90%84%E9%A0%85%E7%9B%AE%E3%81%AE%E5%86%85%E5%AE%B9%2F02_%E8%A9%B3%E7%B4%B0%E8%A8%AD%E5%AE%9A">詳細設定</a>にあるコンタクト名から変更できます。</p>
 <p><figure><img src="assets/Ex%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC-%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88-8abcd4be90.png" alt="Exメニュー-コンタクト"></figure></p>
+</template>
+<template data-doc-route="change_log" data-doc-title="更新履歴">
+<h1>更新履歴</h1>
+<h1 id="ver-141-バグ修正">ver 1.4.1 バグ修正</h1>
+<p>更新日: 2026/07/26</p>
+<h2 id="更新内容">更新内容</h2>
+<p>・オブジェクト登録時に発生するエラーを修正<br>
+・VRChatのアバタープレビューで衣装などが重なって見える問題を修正<br>
+・登録解除時にオブジェクトが有効化されない問題を修正<br>
+・SDK/Modular Avatar系のコンポーネントへの対応を拡大</p>
+<h1 id="ver-140-boneproxy対応アップデート">ver 1.4.0 BoneProxy対応アップデート</h1>
+<p>更新日: 2026/07/23</p>
+<h2 id="更新内容-2">更新内容</h2>
+<ul>
+<li>BoneProxyがアタッチされたオブジェクトも切り替えられるようになりました。</li>
+<li>ぽんタクトのExメニューにアイコンを追加しました。</li>
+<li>Exメニューの構造を変更しました。</li>
+<li>ぽんタクトの構造を全て削除する機能を追加しました。</li>
+<li>フォルダ構造を変更しました。</li>
+</ul>
+<p>VRC BoneProxyはアップロードするときにオブジェクトの位置が変化し、切り替え用アニメーションの追跡ができなくなってしまうことで切り替えが困難でしたが、専用の処理を追加することで対応することができました。なお、切り替え対象に設定したオブジェクトにBoneProxyがついており、そのBoneProxyが切り替え対象外のオブジェクトを参照している場合は現在も非対応となっています。</p>
+<p>ぽんタクトの構造を全て削除したい場合は今回の更新で追加した<code>Tools&gt;Pontact&gt;現在のシーンからぽんタクトを削除</code>ボタンを押してください。</p>
+<h1 id="ver-130-ma競合修正">ver 1.3.0 MA競合修正</h1>
+<p>更新日: 2026/07/11</p>
+<h2 id="更新内容-3">更新内容</h2>
+<ul>
+<li>Modular Avatarの状態が、切り替え後も残ることで表示に不具合が出ることを修正しました。</li>
+<li>パーティクルのサイズ調整をする機能の追加</li>
+</ul>
+<p><code>MA MeshCutter</code>、<code>MA ShapeChanger</code>が使用されたオブジェクトを切り替え対象にすると切り替え前の<code>MeshCutter</code>/<code>ShapeChanger</code>の状態が残ってしまい、一部のメッシュが残ってしまう問題を修正しました。</p>
+<h1 id="ver-120-演出改変のアップデート">ver 1.2.0 演出改変のアップデート</h1>
+<p>更新日: 2026/07/06</p>
+<h2 id="更新内容-4">更新内容</h2>
+<ul>
+<li>切り替え演出の設定を大幅に変更</li>
+<li>切り替え演出の遅延実行ができる機能を追加</li>
+<li>パーティクルを複数設定できる機能の追加</li>
+<li>自動更新機能を追加</li>
+</ul>
+<p>切り替え演出の自由度が非常に低かったため、別コンポーネントを用意して専用の演出設定をできるようにしました。新しく追加したコンポーネント(<code>PontactEdgeEffectSettings</code>)が存在しない場合は切り替え演出をせずに即座に切り替わるようになります。</p>
+<h1 id="ver-111-バグ修正">ver 1.1.1 バグ修正</h1>
+<p>更新日: 2026/06/29</p>
+<h2 id="更新内容-5">更新内容</h2>
+<ul>
+<li>Capsuleに設定したコンタクトの位置が表示されない問題を修正</li>
+<li>詳細設定のインスペクターのUIを一部修正</li>
+</ul>
+<h1 id="ver-110-詳細設定uiアップデート">ver 1.1.0 詳細設定UIアップデート</h1>
+<p>更新日: 2026/06/26</p>
+<h2 id="更新内容-6">更新内容</h2>
+<ul>
+<li>詳細設定のUIを整理し、機能の安定化を実施</li>
+<li>詳細設定を正式なサポートとして追加</li>
+<li>更新情報を通知するシステムを追加</li>
+</ul>
+<h1 id="ver-100-リリース">ver 1.0.0 リリース</h1>
+<p>更新日: 2026/06/24</p>
 </template>
 <template data-doc-route="" data-doc-title="ぽんタクトとは">
 <h1 id="ぽんタクトとは">ぽんタクトとは</h1>
@@ -109,7 +169,7 @@ Both: 自分と他人の両方をロックします。</p>
 </ol>
 </section>
 </template>
-<template data-doc-route="%E5%90%84%E9%A0%85%E7%9B%AE%E3%81%AE%E5%86%85%E5%AE%B9/%E3%82%BF%E3%83%96%E3%81%AE%E8%A8%AD%E5%AE%9A%E9%A0%85%E7%9B%AE" data-doc-title="タブの設定項目">
+<template data-doc-route="reference/overlay" data-doc-title="タブの設定項目">
 <h1>タブの設定項目</h1>
 <div class="table-wrap"><table>
 <thead><tr>
@@ -216,7 +276,7 @@ Both: 自分と他人の両方をロックします。</p>
 </tr>
 <tr>
 <td>詳細設定を開く</td>
-<td>このタブでは操作できない様々な設定を変更することができるようになります。&lt;br&gt;詳しくは<a href="#/%E5%90%84%E9%A0%85%E7%9B%AE%E3%81%AE%E5%86%85%E5%AE%B9/%E8%A9%B3%E7%B4%B0%E8%A8%AD%E5%AE%9A">02_詳細設定</a>や<a href="#/%E5%90%84%E9%A0%85%E7%9B%AE%E3%81%AE%E5%86%85%E5%AE%B9/%E6%BC%94%E5%87%BA%E8%A8%AD%E5%AE%9A">03_演出設定</a>を確認してください。</td>
+<td>このタブでは操作できない様々な設定を変更することができるようになります。&lt;br&gt;詳しくは<a href="#/reference/advanced-settings">02_詳細設定</a>や<a href="#/reference/presentation-settings">03_演出設定</a>を確認してください。</td>
 </tr>
 </tbody>
 </table></div>
@@ -225,7 +285,8 @@ Both: 自分と他人の両方をロックします。</p>
 <p>このタブでの編集は詳細設定で構造を変更していない場合にのみ利用できます。<br>
 詳細設定で状態の追加や、コンタクトの追加などを行ってこのタブでは作業できない状態になった場合、このタブの項目は無効化されます。</p>
 </template>
-<template data-doc-route="%E5%90%84%E9%A0%85%E7%9B%AE%E3%81%AE%E5%86%85%E5%AE%B9/%E8%A9%B3%E7%B4%B0%E8%A8%AD%E5%AE%9A" data-doc-title="詳細設定">
+<template data-doc-route="reference/advanced-settings" data-doc-title="詳細設定">
+<h1>詳細設定</h1>
 <p>さらに自由度の高い設定をすることが可能です。<br>
 3状態以上の切り替えや、コンタクトの追加などが可能になります。</p>
 <h1 id="項目の説明">項目の説明</h1>
@@ -404,7 +465,8 @@ Both: 自分と他人の両方をロックします。</p>
 </tbody>
 </table></div>
 </template>
-<template data-doc-route="%E5%90%84%E9%A0%85%E7%9B%AE%E3%81%AE%E5%86%85%E5%AE%B9/%E6%BC%94%E5%87%BA%E8%A8%AD%E5%AE%9A" data-doc-title="演出設定">
+<template data-doc-route="reference/presentation-settings" data-doc-title="演出設定">
+<h1>演出設定</h1>
 <p>この設定項目(コンポーネント)ではコンタクトが反応して、状態が切り替わる演出(トランジション)を作成することができます。<br>
 このコンポーネントがオブジェクトに設定されていない場合、<strong>即座に切り替わる</strong>ようになります。</p>
 <div class="table-wrap"><table>
@@ -603,7 +665,7 @@ Both: 自分と他人の両方をロックします。</p>
 </tbody>
 </table></div>
 </template>
-<template data-doc-route="Help/%E8%AD%A6%E5%91%8A%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%82%8B" data-doc-title="警告ウィンドウが表示される">
+<template data-doc-route="help/change-setting-window" data-doc-title="警告ウィンドウが表示される">
 <h1>警告ウィンドウが表示される</h1>
 <p>もし、オブジェクトを登録しようとしたときに画像のようなウィンドウが表示された場合、登録しようとしているオブジェクトの中にぽんタクトが安全に切り替えをできない構造を含んでいる可能性があります。</p>
 <p>「オブジェクトの切り替えを優先する」設定がぽんタクトがデフォルトで扱っている設定です。その設定が正しく動作しない可能性がありウィンドウが表示されるので、基本的にこのウィンドウが表示されたら下二つの設定を選択することをおすすめします。<br>

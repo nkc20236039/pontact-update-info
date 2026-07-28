@@ -1,6 +1,6 @@
 {
-    "latestVersion": "1.4.1",
-    "releaseDate": "2026-07-26",
-    "message": "・オブジェクト登録時に発生するエラーを修正\n・VRChatのアバタープレビューで衣装などが重なって見える問題を修正\n・登録解除時にオブジェクトが有効化されない問題を修正\n・SDK/Modular Avatar系のコンポーネントへの対応を拡大",
+    "latestVersion": "1.4.2",
+    "releaseDate": "2026-07-28",
+    "message": "・一定条件でビルド時に発生する問題の修正\n・パーティクルが指定した部位に追従しない問題を修正",
     "downloadUrl": "https://booth.pm/ja/items/8519920"
 }
