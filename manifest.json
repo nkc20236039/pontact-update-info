@@ -12,47 +12,47 @@
     {
       "title": "かんたんセットアップ",
       "source": "01_かんたんセットアップ.md",
-      "output": "index.html#/setup"
+      "output": "setup/index.html"
     },
     {
       "title": "誤操作の防止",
       "source": "02_誤操作の防止.md",
-      "output": "index.html#/touch-lock"
+      "output": "touch-lock/index.html"
     },
     {
       "title": "Exメニューから切り替える",
       "source": "03_Exメニューから切り替える.md",
-      "output": "index.html#/ex_menu"
+      "output": "ex_menu/index.html"
     },
     {
       "title": "更新履歴",
       "source": "99_更新履歴.md",
-      "output": "index.html#/change_log"
+      "output": "change_log/index.html"
     },
     {
       "title": "ぽんタクトとは",
       "source": "index.md",
-      "output": "index.html#/"
+      "output": "index.html"
     },
     {
       "title": "タブの設定項目",
       "source": "04_各項目の内容/01_タブの設定項目.md",
-      "output": "index.html#/reference/overlay"
+      "output": "reference/overlay/index.html"
     },
     {
       "title": "詳細設定",
       "source": "04_各項目の内容/02_詳細設定.md",
-      "output": "index.html#/reference/advanced-settings"
+      "output": "reference/advanced-settings/index.html"
     },
     {
       "title": "演出設定",
       "source": "04_各項目の内容/03_演出設定.md",
-      "output": "index.html#/reference/presentation-settings"
+      "output": "reference/presentation-settings/index.html"
     },
     {
       "title": "警告ウィンドウが表示される",
       "source": "90_Help/01_警告ウィンドウが表示される.md",
-      "output": "index.html#/help/change-setting-window"
+      "output": "help/change-setting-window/index.html"
     }
   ]
 }

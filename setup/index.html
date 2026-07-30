@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>かんたんセットアップ｜ぽんタクト ドキュメント</title>
+  <meta name="description" content="VRChatアバター向けコンタクト・着替えギミック「ぽんタクト」のかんたんセットアップに関するドキュメントです。">
+  <link rel="canonical" href="https://pontact.pages.dev/setup/">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-controls="side-nav"
+      aria-expanded="true"
+      aria-label="リストを折り畳む"
+      title="リストを折り畳む"
+    >
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+    </button>
+    <a class="brand" href="../index.html">ぽんタクト ドキュメント</a>
+  </header>
+  <div class="site-shell">
+    <aside class="side-nav" id="side-nav" aria-label="ドキュメントメニュー">
+      <ul class="nav-tree"><li><a class="nav-link" href="../index.html" >ぽんタクトとは</a></li>
+<li><a class="nav-link is-active" href="index.html"  aria-current="page">かんたんセットアップ</a></li>
+<li><a class="nav-link" href="../touch-lock/index.html" >誤操作の防止</a></li>
+<li><a class="nav-link" href="../ex_menu/index.html" >Exメニューから切り替える</a></li>
+<li class="nav-folder"><details><summary>各項目の内容</summary><ul><li><a class="nav-link" href="../reference/overlay/index.html" >タブの設定項目</a></li>
+<li><a class="nav-link" href="../reference/advanced-settings/index.html" >詳細設定</a></li>
+<li><a class="nav-link" href="../reference/presentation-settings/index.html" >演出設定</a></li></ul></details></li>
+<li class="nav-folder"><details><summary>Help</summary><ul><li><a class="nav-link" href="../help/change-setting-window/index.html" >警告ウィンドウが表示される</a></li></ul></details></li>
+<li><a class="nav-link" href="../change_log/index.html" >更新履歴</a></li></ul>
+    </aside>
+    <main class="doc-content">
+      <article class="doc-article">
+        <h1>かんたんセットアップ</h1>
+<p><figure><img src="../assets/%E3%81%8B%E3%82%93%E3%81%9F%E3%82%93%E5%B0%8E%E5%85%A5%E6%96%B9%E6%B3%95-c4b0632d97.jpg" alt="かんたん導入方法" width="500"></figure></p>
+<hr>
+<ol>
+<li>同梱されているunitypackageをインポートしてください。</li>
+<li>好きなコスチュームを普段の改変通りにアバターの中に設定してください。</li>
+<li>コスチュームを選択するとシーンビューの右下に黒い背景のタブが表示されます。</li>
+<li>表示されたタブで、触れる手、触る場所を選んでください。</li>
+<li>通常状態で表示しておきたいコスチュームを選択した状態で、「デフォルトを設定」ボタンを1回押してください。</li>
+<li>切り替えた後に表示したコスチュームを選択した状態で、「切り替え後を設定」ボタンを1回押してください。</li>
+</ol>
+<p>最短のセットアップではこの時点で設定が完了しています。</p>
+<h1 id="その他の便利機能">その他の便利機能</h1>
+<p>シーンビューに表示されるタブでは触る手、触る場所、ジェスチャーや他人から触れられるかなどの設定をすることが可能です。<br>
+詳しくは<a href="../reference/overlay/index.html">タブの設定項目</a>を確認してください。</p>
+<p>導入が終わるとExメニューも同時に作成されます。<br>
+誤操作防止のためのロック機能があります。詳しくは<a href="../touch-lock/index.html">誤操作の防止</a>を確認してください。</p>
+      </article>
+    </main>
+  </div>
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const sideNav = document.querySelector(".side-nav");
+    const mobileNavQuery = window.matchMedia("(max-width: 820px)");
+    let navCollapsed = null;
+
+    const setNavCollapsed = (collapsed, animate = true) => {
+      const isInitialState = navCollapsed === null;
+      navCollapsed = collapsed;
+      const label = collapsed ? "リストを展開" : "リストを折り畳む";
+      navToggle.setAttribute("aria-expanded", String(!collapsed));
+      navToggle.setAttribute("aria-label", label);
+      navToggle.setAttribute("title", label);
+      sideNav.inert = collapsed;
+      sideNav.setAttribute("aria-hidden", String(collapsed));
+
+      if (!animate || isInitialState) {
+        document.body.classList.add("nav-no-transition");
+        document.body.classList.toggle("nav-collapsed", collapsed);
+        window.requestAnimationFrame(() => {
+          document.body.classList.remove("nav-no-transition");
+        });
+        return;
+      }
+
+      document.body.classList.toggle("nav-collapsed", collapsed);
+    };
+
+    setNavCollapsed(mobileNavQuery.matches, false);
+
+    navToggle.addEventListener("click", () => {
+      setNavCollapsed(!navCollapsed);
+    });
+
+    mobileNavQuery.addEventListener("change", (event) => {
+      setNavCollapsed(event.matches, false);
+    });
+
+    sideNav.addEventListener("click", (event) => {
+      if (event.target.closest(".nav-link") && mobileNavQuery.matches) {
+        setNavCollapsed(true);
+      }
+    });
+  </script>
+</body>
+</html>

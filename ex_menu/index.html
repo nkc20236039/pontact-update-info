@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exメニューから切り替える｜ぽんタクト ドキュメント</title>
+  <meta name="description" content="VRChatアバター向けコンタクト・着替えギミック「ぽんタクト」のExメニューから切り替えるに関するドキュメントです。">
+  <link rel="canonical" href="https://pontact.pages.dev/ex_menu/">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-controls="side-nav"
+      aria-expanded="true"
+      aria-label="リストを折り畳む"
+      title="リストを折り畳む"
+    >
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+    </button>
+    <a class="brand" href="../index.html">ぽんタクト ドキュメント</a>
+  </header>
+  <div class="site-shell">
+    <aside class="side-nav" id="side-nav" aria-label="ドキュメントメニュー">
+      <ul class="nav-tree"><li><a class="nav-link" href="../index.html" >ぽんタクトとは</a></li>
+<li><a class="nav-link" href="../setup/index.html" >かんたんセットアップ</a></li>
+<li><a class="nav-link" href="../touch-lock/index.html" >誤操作の防止</a></li>
+<li><a class="nav-link is-active" href="index.html"  aria-current="page">Exメニューから切り替える</a></li>
+<li class="nav-folder"><details><summary>各項目の内容</summary><ul><li><a class="nav-link" href="../reference/overlay/index.html" >タブの設定項目</a></li>
+<li><a class="nav-link" href="../reference/advanced-settings/index.html" >詳細設定</a></li>
+<li><a class="nav-link" href="../reference/presentation-settings/index.html" >演出設定</a></li></ul></details></li>
+<li class="nav-folder"><details><summary>Help</summary><ul><li><a class="nav-link" href="../help/change-setting-window/index.html" >警告ウィンドウが表示される</a></li></ul></details></li>
+<li><a class="nav-link" href="../change_log/index.html" >更新履歴</a></li></ul>
+    </aside>
+    <main class="doc-content">
+      <article class="doc-article">
+        <h1>Exメニューから切り替える</h1>
+<p>コンタクトに触れる以外にもExメニューから状態を切り替えられるようになっています。<br>
+ぽんタクトの設定をすると自動でExメニューが作成され、アバターのメニューに追加されます。</p>
+<p><figure><img src="../assets/Ex%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC-%E3%83%88%E3%83%83%E3%83%97-93f6dfaaf6.png" alt="Exメニュー-トップ"></figure></p>
+<p>エクスプレッションメニューを開き、「Pontact &gt; Touch」を開くとコンタクトの一覧が表示されます。<br>
+反応させたいコンタクトの名前をクリックすることでExメニューから衣装の切り替えができます。<br>
+コンタクトの名前は<a href="../reference/advanced-settings/index.html">詳細設定</a>にあるコンタクト名から変更できます。</p>
+<p><figure><img src="../assets/Ex%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC-%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88-8abcd4be90.png" alt="Exメニュー-コンタクト"></figure></p>
+      </article>
+    </main>
+  </div>
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const sideNav = document.querySelector(".side-nav");
+    const mobileNavQuery = window.matchMedia("(max-width: 820px)");
+    let navCollapsed = null;
+
+    const setNavCollapsed = (collapsed, animate = true) => {
+      const isInitialState = navCollapsed === null;
+      navCollapsed = collapsed;
+      const label = collapsed ? "リストを展開" : "リストを折り畳む";
+      navToggle.setAttribute("aria-expanded", String(!collapsed));
+      navToggle.setAttribute("aria-label", label);
+      navToggle.setAttribute("title", label);
+      sideNav.inert = collapsed;
+      sideNav.setAttribute("aria-hidden", String(collapsed));
+
+      if (!animate || isInitialState) {
+        document.body.classList.add("nav-no-transition");
+        document.body.classList.toggle("nav-collapsed", collapsed);
+        window.requestAnimationFrame(() => {
+          document.body.classList.remove("nav-no-transition");
+        });
+        return;
+      }
+
+      document.body.classList.toggle("nav-collapsed", collapsed);
+    };
+
+    setNavCollapsed(mobileNavQuery.matches, false);
+
+    navToggle.addEventListener("click", () => {
+      setNavCollapsed(!navCollapsed);
+    });
+
+    mobileNavQuery.addEventListener("change", (event) => {
+      setNavCollapsed(event.matches, false);
+    });
+
+    sideNav.addEventListener("click", (event) => {
+      if (event.target.closest(".nav-link") && mobileNavQuery.matches) {
+        setNavCollapsed(true);
+      }
+    });
+  </script>
+</body>
+</html>

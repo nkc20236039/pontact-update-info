@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>警告ウィンドウが表示される｜ぽんタクト ドキュメント</title>
+  <meta name="description" content="VRChatアバター向けコンタクト・着替えギミック「ぽんタクト」の警告ウィンドウが表示されるに関するドキュメントです。">
+  <link rel="canonical" href="https://pontact.pages.dev/help/change-setting-window/">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-controls="side-nav"
+      aria-expanded="true"
+      aria-label="リストを折り畳む"
+      title="リストを折り畳む"
+    >
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+    </button>
+    <a class="brand" href="../../index.html">ぽんタクト ドキュメント</a>
+  </header>
+  <div class="site-shell">
+    <aside class="side-nav" id="side-nav" aria-label="ドキュメントメニュー">
+      <ul class="nav-tree"><li><a class="nav-link" href="../../index.html" >ぽんタクトとは</a></li>
+<li><a class="nav-link" href="../../setup/index.html" >かんたんセットアップ</a></li>
+<li><a class="nav-link" href="../../touch-lock/index.html" >誤操作の防止</a></li>
+<li><a class="nav-link" href="../../ex_menu/index.html" >Exメニューから切り替える</a></li>
+<li class="nav-folder"><details><summary>各項目の内容</summary><ul><li><a class="nav-link" href="../../reference/overlay/index.html" >タブの設定項目</a></li>
+<li><a class="nav-link" href="../../reference/advanced-settings/index.html" >詳細設定</a></li>
+<li><a class="nav-link" href="../../reference/presentation-settings/index.html" >演出設定</a></li></ul></details></li>
+<li class="nav-folder"><details open><summary>Help</summary><ul><li><a class="nav-link is-active" href="index.html"  aria-current="page">警告ウィンドウが表示される</a></li></ul></details></li>
+<li><a class="nav-link" href="../../change_log/index.html" >更新履歴</a></li></ul>
+    </aside>
+    <main class="doc-content">
+      <article class="doc-article">
+        <h1>警告ウィンドウが表示される</h1>
+<p>もし、オブジェクトを登録しようとしたときに画像のようなウィンドウが表示された場合、登録しようとしているオブジェクトの中にぽんタクトが安全に切り替えをできない構造を含んでいる可能性があります。</p>
+<p>「オブジェクトの切り替えを優先する」設定がぽんタクトがデフォルトで扱っている設定です。その設定が正しく動作しない可能性がありウィンドウが表示されるので、基本的にこのウィンドウが表示されたら下二つの設定を選択することをおすすめします。<br>
+なお、一番安全に処理できそうなものを自動検出して推奨設定を表示しています。よくわからない場合は\[推奨\]<br>
+と書かれた選択肢を選んでください。<br>
+<figure><img src="../../assets/%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88%E6%96%B9%E6%B3%95%E8%A7%A3%E6%B1%BA%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6-9dd59b3b0a.png" alt="切り替え方法解決ウィンドウ"></figure></p>
+<p>この設定はぽんタクトに登録したオブジェクトのヒエラルキーから変更することが可能です。<br>
+<figure><img src="../../assets/%E8%A8%AD%E5%AE%9A%E6%96%B9%E6%B3%95%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88-b323c2077c.png" alt="設定方法コンポーネント"></figure></p>
+      </article>
+    </main>
+  </div>
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const sideNav = document.querySelector(".side-nav");
+    const mobileNavQuery = window.matchMedia("(max-width: 820px)");
+    let navCollapsed = null;
+
+    const setNavCollapsed = (collapsed, animate = true) => {
+      const isInitialState = navCollapsed === null;
+      navCollapsed = collapsed;
+      const label = collapsed ? "リストを展開" : "リストを折り畳む";
+      navToggle.setAttribute("aria-expanded", String(!collapsed));
+      navToggle.setAttribute("aria-label", label);
+      navToggle.setAttribute("title", label);
+      sideNav.inert = collapsed;
+      sideNav.setAttribute("aria-hidden", String(collapsed));
+
+      if (!animate || isInitialState) {
+        document.body.classList.add("nav-no-transition");
+        document.body.classList.toggle("nav-collapsed", collapsed);
+        window.requestAnimationFrame(() => {
+          document.body.classList.remove("nav-no-transition");
+        });
+        return;
+      }
+
+      document.body.classList.toggle("nav-collapsed", collapsed);
+    };
+
+    setNavCollapsed(mobileNavQuery.matches, false);
+
+    navToggle.addEventListener("click", () => {
+      setNavCollapsed(!navCollapsed);
+    });
+
+    mobileNavQuery.addEventListener("change", (event) => {
+      setNavCollapsed(event.matches, false);
+    });
+
+    sideNav.addEventListener("click", (event) => {
+      if (event.target.closest(".nav-link") && mobileNavQuery.matches) {
+        setNavCollapsed(true);
+      }
+    });
+  </script>
+</body>
+</html>
